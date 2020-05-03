@@ -69,7 +69,7 @@ IdAlimento int not null,
 Nombre Varchar(40) not null,
 Descripcion Varchar (40) not null,
 Precio float not null,
-Imagen Varchar (255),
+Imagen Varchar (255),  --Guarda la ruta de la imagen
 IdMateriaPrima int not null,
 Primary key (IdAlimento),
 CONSTRAINT IdMateriaPrima
@@ -86,11 +86,17 @@ NombreCliente Varchar(40) not null,
 Correo Varchar (40) not null,
 IdPersonal int not null,
 IdAlimento int not null,
-IdPromocion int not null,
-IdCliente int not null,
+IdPromocion int,
+IdCliente int,
 Primary key (NumVenta),
-CONSTRAINT IdPersonal
-Foreign key (IdPersonal)
-References Personal (IdPersonal)
-On DELETE CASCADE
-ON UPDATE CASCADE);
+           CONSTRAINT IdPersonal Foreign key (IdPersonal)
+           References Personal (IdPersonal),
+           CONSTRAINT IdAlimento Foreign key (IdAlimento)
+           References Alimento (IdAlimento),
+           CONSTRAINT IdPromocion Foreign key (IdPromocion)
+           References Promociones (IdPromocion),
+           CONSTRAINT IdCliente Foreign key (IdCliente)
+           References Cliente (IdCliente));
+
+
+

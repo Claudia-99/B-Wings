@@ -68,7 +68,7 @@ body{
 }
 
 .controls{
-    width: 25%;
+    width: 33.7%;
     border-radius:5px;
     font-family: 'calibri';
     color: black;
@@ -104,4 +104,3 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-
